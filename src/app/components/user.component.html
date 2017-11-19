@@ -1,0 +1,38 @@
+<div class="container">
+	<h3 class="text-center">Angular 4 &amp; Ably App to help you make orders</h3>
+	<div class="col-md-12" style="margin-bottom: 40px">
+		<div class="">
+			<label class="row col-md-12">What is your name?</label>
+			<span class="row col-md-4"><input type="text" class="form-control" [(ngModel)]="name" placeholder="full name" id="name"></span>
+			<p id="name-error" *ngIf="name == ''" style="color: red"></p>
+		</div>
+		<hr>
+	</div>	
+	<div class="col-md-4" style="margin-bottom: 40px">
+		<h4>Please make an order</h4>
+			<input type="text" class="form-control" [(ngModel)]="newVal" placeholder="Enter and Order to add it"><br>
+			<button class="btn btn-primary" (click)="add()">Add</button>
+			<br>
+	</div>
+	<div class="col-md-4" style="margin-bottom: 40px">
+		<h4>Your Orders</h4>
+		<hr>
+		<ol>
+			<li *ngFor="let x of orderItems">
+				{{ x }}
+			</li>
+			<br>
+		</ol>
+		<span *ngIf="orderItems != ''"><button class="btn btn-success" (click)="order()">Place Order</button></span>
+	</div>
+	<div class="col-md-4">
+		<h4>Order Summary</h4>
+		<ol>
+			<li *ngFor="let x of orderSummary">
+				{{ x }}
+			</li>
+			<br>
+		</ol>
+		<pre>{{reply}}</pre>
+	</div>
+</div>
